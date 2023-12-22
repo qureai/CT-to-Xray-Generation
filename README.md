@@ -8,7 +8,7 @@ A. Chang and A. Moturu, "Detecting Early Stage Lung Cancer using a Neural Networ
 Creation of Synthetic X-Rays to Train a Neural Network to Detect Lung Cancer
 
 Directory:  
->   chestCT0/  
+>
 	Chunk.hpp  
 	Constants.h  
 	Coordinate.cpp  
