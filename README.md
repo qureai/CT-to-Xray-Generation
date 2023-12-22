@@ -49,12 +49,10 @@ Example run:  python CTtoTrainingDataPointSource.py  nhs_brompton.pt  positions_
 Dependencies:  
 >	random_shape_generator.py  
 	--  
-	readNPY.m  
-	readNPYheader.m  
-	dicomHandler.m  
+	readNPY.py
+	readNPYheader.py
 	--  
 	positions_0.txt (etc.)  
-	chestCT0/ (etc.)  
 	--  
 	Constants.h  
 	Chunk.hpp  
