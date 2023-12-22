@@ -1,14 +1,11 @@
 # Synthetic X-Ray Project
-
-Please cite/refer to our following papers:
+Based on papers 
 
 A. Moturu and A. Chang, “Creation of synthetic x-rays to train a neural network to detect lung cancer.” http://www.cs.toronto.edu/pub/reports/na/Project_Report_Moturu_Chang_1.pdf, 2018.
 
 A. Chang and A. Moturu, "Detecting Early Stage Lung Cancer using a Neural Network Trained with Patches from Synthetically Generated X-Rays." http://www.cs.toronto.edu/pub/reports/na/Project_Report_Moturu_Chang_2.pdf, 2019. 
 
 Creation of Synthetic X-Rays to Train a Neural Network to Detect Lung Cancer
-
-*Edit: chestCT0/ is no longer on the repository; you may use your own chest CT scan (folder containing DICOM files of the slices).*
 
 Directory:  
 >   chestCT0/  
@@ -42,28 +39,13 @@ Directory:
 The Lung Segmentation folder contains the segment_lungs.py file which segments lungs for randomized nodule placement,  
 but positions_0.txt contains manually selected points as of now.  
 
-A CT scan (chestCT0/) is needed as input to create X-rays. 
 Running this program will create X-rays that are placed in the chestXRays0 folder.  
 The textCTs, textNodules, and textXRays folders are used in the process of making point-source X-rays.  
+The code is not adding synthetic nodules. Can be tweaked to do the same. 
+ 
+Example run:  python CTtoTrainingDataPointSource.py  nhs_brompton.pt  positions_0.txt
 
-**CTtoTrainingDataParallel.m** is the main program that makes parallel-ray X-rays (makes ~400 X-rays every 10 minutes).  
-Dependencies:  
->	random_shape_generator.py  
-	--  
-	readNPY.m  
-	readNPYheader.m  
-	dicomHandler.m  
-	--  
-	positions_0.txt (etc.)  
-	chestCT0/ (etc.)  
-
-To run in MatLab2018a, type into the console: CTtoTrainingDataParallel(CTFolderName, specificationsFileName);  
->	CTFolderName is the folder containing the CT slices files  
-	specificationsFileName is the file that contains nodule positions  
-
-Example run: **CTtoTrainingDataParallel('chestCT0/I/NVFRWCBT/5O4VNQBN/', 'positions_0.txt');**  
-
-**CTtoTrainingDataPointSource.m** is the main program that makes point-source X-rays (currently makes 7 X-rays from 7 different point sources).  
+**CTtoTrainingDataPointSource.py** is the main program that makes point-source X-rays (can have 7 different point sources ).  
 Dependencies:  
 >	random_shape_generator.py  
 	--  
@@ -90,10 +72,10 @@ Dependencies:
 	SimulatedRay.cpp  
 	Voxel.cpp  
 	--  
-	Makefil
+	Makefile
 
-To run in MatLab2018a, type into the console: CTtoTrainingDataPointSource(CTFolderName, specificationsFileName);  
->	CTFolderName is the folder containing the CT slices files  
-	specificationsFileName is the file that contains nodule positions  
+To run in python, type into the console:  python CTtoTrainingDataPointSource.py CTFileName specificationsFileName
+>	CTFileName is the .pt file containing CTs 
+	specificationsFileName is the file that contains nodule positions(positions_0.txt provided)  
 
-Example run: **CTtoTrainingDataPointSource('chestCT0/I/NVFRWCBT/5O4VNQBN/', 'positions_0.txt');**  
+Example run: python CTtoTrainingDataPointSource.py  /cache/fast_data_nas72/qct/data_governance/series_dicts/nhs_brompton.pt  positions_0.txt 

@@ -31,7 +31,7 @@ def CTtoTrainingDataPointSource(CTFileName,specificationsFileName):
     for CT_Num_ in [1,3]:
         print("------------------CT_NUM-------------", CT_Num_)
         CTnum = CT_Num_
-        x = torch.load("/cache/fast_data_nas72/qct/data_governance/series_dicts/"+ CTFileName)
+        x = torch.load(CTFileName)
         sids = list(x.keys())
         CTarrayOriginal = CTScan.load(x[sids[CTnum]], readtype="dcm", scan_type="chestct")
         spacing = CTarrayOriginal.spacing 
