@@ -14,7 +14,7 @@ Directory:
 	Coordinate.cpp  
 	Coordinate.hpp  
 	CTtoTrainingDataParallel.m  
-	CTtoTrainingDataPointSource.m  
+	CTtoTrainingDataPointSource.py  
 	dicomHandler.m  
 	Lung Segmentation/
 	main.cpp  
