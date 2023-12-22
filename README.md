@@ -26,8 +26,8 @@ Directory:
 	positions_0.txt  
 	ProjectionPlane.hpp  
 	random_shape_generator.py  
-	readNPY.m  
-	readNPYheader.m  
+	readNPY.py  
+	readNPYheader.py  
 	SimulatedRay.cpp  
 	SimulatedRay.hpp  
 	textCTs/  
