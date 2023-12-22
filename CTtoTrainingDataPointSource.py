@@ -28,7 +28,7 @@ from qct_utils.schema.ct import CTScan
 def CTtoTrainingDataPointSource(CTFileName,specificationsFileName):
     np.random.seed(42)  # Set a seed for reproducibility
     write_nodules = True
-    for CT_Num_ in [1, 3, 4, 5, 7, 10, 12]:
+    for CT_Num_ in [1,3]:
         print("------------------CT_NUM-------------", CT_Num_)
         CTnum = CT_Num_
         x = torch.load("/cache/fast_data_nas72/qct/data_governance/series_dicts/"+ CTFileName)
