@@ -90,7 +90,7 @@ Dependencies:
 	SimulatedRay.cpp  
 	Voxel.cpp  
 	--  
-	Makefile  
+	Makefil
 
 To run in MatLab2018a, type into the console: CTtoTrainingDataPointSource(CTFolderName, specificationsFileName);  
 >	CTFolderName is the folder containing the CT slices files  
