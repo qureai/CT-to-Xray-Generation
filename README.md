@@ -76,6 +76,7 @@ Dependencies:
 
 To run in python, type into the console:  python CTtoTrainingDataPointSource.py CTFileName specificationsFileName
 >	CTFileName is the .pt file containing CTs
+>
 >	specificationsFileName is the file that contains nodule positions(positions_0.txt provided)  
 
 Example run: python CTtoTrainingDataPointSource.py  /cache/fast_data_nas72/qct/data_governance/series_dicts/nhs_brompton.pt  positions_0.txt 
